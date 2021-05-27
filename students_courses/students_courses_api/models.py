@@ -25,7 +25,7 @@ class Student(models.Model):
 class CourseParticipant(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    completed = models.BooleanField()
+    completed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.course
